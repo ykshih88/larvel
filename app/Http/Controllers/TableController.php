@@ -47,11 +47,21 @@ class TableController extends Controller
         return RatingResource::collection($movies);
     }
 
+    public function Delete_by_id_and_movie_id(Request $request){
+        $userid = $request->input('user_id');
+        $movieid = $request->input('movie_id');
+
+        return Rating::where([
+            ['user_id', '=', $userid],
+            ['movie_id', '=', $movieid],
+        ])->delete();
+    }
+
     public function selectMovieByIdwithRelation(Request $request){
         $userid = $request->input('user_id');
         #$userid = 5;
         $movietitle = Rating::with(['movie'])->where('user_id', $userid)->get();
-        return RatWithMovieResource::collection($movietitle);//
+        return RatWithMovieResource::collection($movietitle);
     }
 
     public function RenderExample(String $name){
