@@ -51,7 +51,7 @@ class TableController extends Controller
         $userid = $request->input('user_id');
         #$userid = 5;
         $movietitle = Rating::with(['movie'])->where('user_id', $userid)->get();
-        return RatWithMovieResource::collection($movietitle);
+        return RatWithMovieResource::collection($movietitle);//
     }
 
     public function RenderExample(String $name){
