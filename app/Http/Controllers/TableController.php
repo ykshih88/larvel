@@ -57,16 +57,26 @@ class TableController extends Controller
         ])->delete();
     }
 
-    public function selectMovieByIdwithRelation(Request $request){
+    public function Update_by_id_and_movie_id(Request $request){
         $userid = $request->input('user_id');
-        #$userid = 5;
-        $movietitle = Rating::with(['movie'])->where('user_id', $userid)->get();
-        return RatWithMovieResource::collection($movietitle);
+        $movieid = $request->input('movie_id');
+        $score = $request->input('rating');
+        return Rating::where([
+                ['user_id', '=', $userid],
+                ['movie_id', '=', $movieid],
+            ])->update(['rating' => $score]);
     }
 
-    public function RenderExample(String $name){
-        $filename = 'doraemon.jpg';
-        return view('hello', ['name' => $name ,'filename'=>$filename]);
-    }
+//    public function selectMovieByIdwithRelation(Request $request){
+//        $userid = $request->input('user_id');
+//        #$userid = 5;
+//        $movietitle = Rating::with(['movie'])->where('user_id', $userid)->get();
+//        return RatWithMovieResource::collection($movietitle);
+//    }
+//
+//    public function RenderExample(String $name){
+//        $filename = 'doraemon.jpg';
+//        return view('hello', ['name' => $name ,'filename'=>$filename]);
+//    }
 }
 
