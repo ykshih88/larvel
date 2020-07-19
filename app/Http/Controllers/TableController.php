@@ -26,7 +26,10 @@ class TableController extends Controller
     public function selectMovieByIdWithResource(Request $request){
         $userid = $request->input('user_id');
         $movies = Rating::where('user_id', $userid)->get();
-        return RatingResource::collection($movies);
+        $result= [
+            'data'=> RatingResource::collection($movies)
+        ];
+        return view("search")->with('data',$result);
     }
 
     public function selectMovieByIdAndRating(Request $request){

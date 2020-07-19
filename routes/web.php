@@ -13,10 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('search',['name'=>['123','567'],
+                                'name2'=>'456'
+    ]);
+});
+
 Route::get('/get_id', 'TableController@selectMovieByIdWithResource')->name('example_get');
 Route::get('/rating', 'TableController@selectMovieByIdAndRating')->name('example_get');
 Route::get('/delete', 'TableController@Delete_by_id_and_movie_id')->name('example_get');
 Route::get('/update', 'TableController@Update_by_id_and_movie_id')->name('example_get');
+
 
 Route::post('/example_post', 'TableController@selectMovieByIdwithRelation')->name('example_post');
 Route::get('/display/{name}','TableController@RenderExample')->name('render_example');
