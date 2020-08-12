@@ -19,10 +19,10 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/get_id', 'TableController@selectMovieByIdWithResource')->name('example_get');
-Route::get('/rating', 'TableController@selectMovieByIdAndRating')->name('example_get');
-Route::get('/delete', 'TableController@Delete_by_id_and_movie_id')->name('example_get');
-Route::get('/update', 'TableController@Update_by_id_and_movie_id')->name('example_get');
+Route::get('/get_id', 'TableController@selectMovieByIdWithResource')->name('get_id');
+Route::get('/rating', 'TableController@selectMovieByIdAndRating')->name('rating');
+Route::get('/delete', 'TableController@Delete_by_id_and_movie_id')->name('delete');
+Route::get('/update', 'TableController@Update_by_id_and_movie_id')->name('update');
 
 
 Route::post('/example_post', 'TableController@selectMovieByIdwithRelation')->name('example_post');

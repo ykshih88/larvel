@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../109-Django-Orientation-master/.idea/109-Django-Orientation-master.iml" filepath="$PROJECT_DIR$/../109-Django-Orientation-master/.idea/109-Django-Orientation-master.iml" />
+      <module fileurl="file://$USER_HOME$/Demo/.idea/Demo.iml" filepath="$USER_HOME$/Demo/.idea/Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Django_practice_project/.idea/Django_practice_project.iml" filepath="$PROJECT_DIR$/../Django_practice_project/.idea/Django_practice_project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../myDjango/.idea/myDjango.iml" filepath="$PROJECT_DIR$/../myDjango/.idea/myDjango.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/myProject.iml" filepath="$PROJECT_DIR$/.idea/myProject.iml" />
     </modules>
   </component>

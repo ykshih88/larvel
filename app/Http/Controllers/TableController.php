@@ -11,7 +11,8 @@ use App\Http\Resources\RatWithMovieResource;
 class TableController extends Controller
 {
     //
-    public function experimentFiled(Request $request){
+    public function experimentFiled(Request $request)
+    {
         #$userid = $request->input('userid');
         $userid = 5;
         $movies = Rating::where('user_id', 5)->get();
@@ -23,23 +24,25 @@ class TableController extends Controller
         #}
     }
 
-    public function selectMovieByIdWithResource(Request $request){
+    public function selectMovieByIdWithResource(Request $request)
+    {
         $userid = $request->input('user_id');
         $movies = Rating::where('user_id', $userid)->get();
-        $result= [
-            'data'=> RatingResource::collection($movies)
+        $result = [
+            'data' => RatingResource::collection($movies)
         ];
-        return view("search")->with('data',$result);
+        return view("search")->with('data', $result);
     }
 
-    public function selectMovieByIdAndRating(Request $request){
+    public function selectMovieByIdAndRating(Request $request)
+    {
         $userid = $request->input('user_id');
         $movieid = $request->input('movie_id');
         $score = $request->input('rating');
         Rating::insert(array(
-            'user_id'     =>   $userid,
-            'movie_id'   =>   $movieid,
-                'rating' =>   $score
+                'user_id' => $userid,
+                'movie_id' => $movieid,
+                'rating' => $score
             )
         );
         $movies = Rating::where([
@@ -50,7 +53,8 @@ class TableController extends Controller
         return RatingResource::collection($movies);
     }
 
-    public function Delete_by_id_and_movie_id(Request $request){
+    public function Delete_by_id_and_movie_id(Request $request)
+    {
         $userid = $request->input('user_id');
         $movieid = $request->input('movie_id');
 
@@ -60,14 +64,15 @@ class TableController extends Controller
         ])->delete();
     }
 
-    public function Update_by_id_and_movie_id(Request $request){
+    public function Update_by_id_and_movie_id(Request $request)
+    {
         $userid = $request->input('user_id');
         $movieid = $request->input('movie_id');
         $score = $request->input('rating');
         return Rating::where([
-                ['user_id', '=', $userid],
-                ['movie_id', '=', $movieid],
-            ])->update(['rating' => $score]);
+            ['user_id', '=', $userid],
+            ['movie_id', '=', $movieid],
+        ])->update(['rating' => $score]);
     }
 
 //    public function selectMovieByIdwithRelation(Request $request){

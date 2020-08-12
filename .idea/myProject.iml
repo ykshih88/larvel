@@ -108,5 +108,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="109-Django-Orientation-master" />
+    <orderEntry type="module" module-name="Demo" />
+    <orderEntry type="module" module-name="Django_practice_project" />
+    <orderEntry type="module" module-name="myDjango" />
   </component>
 </module>
